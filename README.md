@@ -13,6 +13,22 @@ The project turns production failure modes into small, reproducible
 experiments. Each lab aims to document the expected invariant, inject one
 failure, capture the observed behavior, and test a concrete mitigation.
 
+## Foundation experiments
+
+The foundation series builds the smallest controllable tool-calling agent before
+introducing side effects and recovery failures:
+
+1. [DeepSeek Tool Loop](examples/foundations/001-deepseek-tool-loop/) — the
+   model proposes one local tool call and receives its result.
+2. [Controlled Tool Registry](examples/foundations/002-controlled-tool-registry/)
+   — an explicit allowlist and runtime argument validation control execution.
+3. [Bounded Agent Loop](examples/foundations/003-bounded-agent-loop/) —
+   multi-round tool use with budgets, repetition protection, stop reasons, and
+   a structured trace.
+
+The next step is the first failure lab, **Timeout After Commit**. The foundation
+series stops at Experiment 003 rather than growing into a general Agent tutorial.
+
 ## Status
 
 This project is in its initial build phase. The first experiment is being
@@ -58,6 +74,7 @@ Every completed lab should include:
 ## Repository layout
 
 ```text
+examples/   Small foundation experiments for understanding the execution loop
 labs/       Reproducible failure experiments
 patterns/   Architecture patterns derived from verified experiments
 fixtures/   Deterministic providers, events, and failure inputs
