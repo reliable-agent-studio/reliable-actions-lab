@@ -3,6 +3,20 @@
 Each lab should be independently runnable and use synthetic data and local
 fake providers by default.
 
+## Published labs
+
+1. [Timeout After Commit](001-timeout-after-commit/) — deterministic comparison
+   of naive retry and a stable business idempotency key.
+
+## Next lab
+
+`002-agent-retry-regenerates-action-identity` will test why a model-generated
+tool-call ID is not a durable business-action identity.
+
+New labs should copy the required section structure below, not duplicate an
+earlier lab wholesale. Reuse only the smallest fixture behavior needed to keep
+each experiment independently understandable and runnable.
+
 ## Required lab sections
 
 1. Problem

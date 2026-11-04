@@ -31,26 +31,28 @@ series stops at Experiment 003 rather than growing into a general Agent tutorial
 
 ## Status
 
-This project is in its initial build phase. The first experiment is being
-developed; no production-safety claims are made yet.
+This project is in its initial build phase. The first deterministic failure lab
+is published; no production-safety claims are made yet.
 
-## First experiment: Timeout After Commit
+## First failure lab: Timeout After Commit
 
 A refund provider commits an action, but its response is lost or delayed long
 enough for the caller to time out. The workflow retries and may issue the same
 refund twice.
 
-The experiment will compare:
+The completed baseline compares:
 
 1. retry without an idempotency key;
-2. retry with a business-level idempotency key;
-3. checkpoint and resume after an ambiguous outcome;
-4. recovery using a durable action receipt.
+2. retry with a stable business idempotency key;
+3. reuse of one key with conflicting arguments;
+4. separate business actions represented by separate keys.
+
+Run the lab: [labs/001-timeout-after-commit](labs/001-timeout-after-commit/).
 
 ## Planned labs
 
-- Timeout After Commit
-- Retry Without Idempotency
+- [Timeout After Commit](labs/001-timeout-after-commit/) — published baseline
+- Agent Retry Regenerates Action Identity
 - Resume Replays a Completed Action
 - Approval Does Not Bind to Arguments
 - Parallel Tools Lose an Output
